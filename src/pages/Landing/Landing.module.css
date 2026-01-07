@@ -1,0 +1,179 @@
+.landing {
+  min-height: 100vh;
+}
+
+.hero {
+    position: relative;
+    height: 510px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/public/images/hero-three-women.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 0;
+}
+
+.heroContent {
+    text-align: center;
+    color: #000;
+    z-index: 1;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    margin: 0 0 2rem;
+    color: #ffffff;
+}
+
+.promoBanner {
+  background-color: #000;
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.promoContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.promoTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 1rem;
+}
+
+.promoSubtitle {
+  font-size: 1.25rem;
+  margin: 0 0 2rem;
+  color: #ccc;
+}
+
+.section {
+  max-width: 1400px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff69b4;
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.categoryCard {
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  background-color: #ffb3d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.categoryCard:hover {
+  transform: scale(1.02);
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryName {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.brandCard {
+  text-decoration: none;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: #fff;
+}
+
+.brandCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.brandName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .productsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+  .brandGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

@@ -1,46 +1,154 @@
-# Getting Started with Create React App
+# Luma Beauty & Skincare - E-commerce Prototype
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A working prototype of a cosmetics and personal care e-commerce web application built for a university project.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- **Frontend**: React 19 with TypeScript
+- **Styling**: CSS Modules
+- **State Management**: React Context API
+- **Routing**: React Router v6
+- **Backend**: Mock/dummy data (local JSON/in-memory)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Core Pages
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. **Landing Page**
+   - Hero section with CTA
+   - Promotional banner
+   - Shop by Category section
+   - Shop by Brand section
+   - Featured products grid
 
-### `npm test`
+2. **Product Listing Page**
+   - Product grid with filters:
+     - Brand filter (checkboxes)
+     - Category filter (radio buttons)
+     - Price range slider
+     - Rating filter
+   - Sorting options (price, popularity, rating)
+   - Results count display
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Product Details Page**
+   - Product image gallery with thumbnails
+   - Product information (name, price, rating, description)
+   - Quantity selector
+   - Add to cart functionality
+   - Similar products recommendations
 
-### `npm run build`
+4. **Shopping Cart**
+   - List of cart items with quantity controls
+   - Remove items functionality
+   - Subtotal calculation
+   - Frequently bought together recommendations
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. **Checkout**
+   - Personal information form
+   - Shipping information (delivery/pickup)
+   - Address fields
+   - Payment method selection (card/cash)
+   - Card details form (when card selected)
+   - Order summary with discount calculation
+   - Order creation and redirect to tracking
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6. **Order Tracking**
+   - Order status tracker with visual progress
+   - Order items list
+   - Payment and delivery details
+   - Order summary
+   - Help section links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Node.js (v14 or higher)
+- npm or yarn
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone the repository or navigate to the project directory
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-## Learn More
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── components/          # Reusable components
+│   ├── Button/
+│   ├── Footer/
+│   ├── Header/
+│   └── ProductCard/
+├── context/             # React Context for state management
+│   └── AppContext.tsx
+├── data/                # Mock data
+│   └── mockData.ts
+├── pages/               # Page components
+│   ├── Checkout/
+│   ├── Landing/
+│   ├── OrderTracking/
+│   ├── ProductDetails/
+│   ├── ProductListing/
+│   └── ShoppingCart/
+├── types/               # TypeScript type definitions
+│   └── index.ts
+├── App.tsx              # Main app component with routing
+└── index.tsx            # Entry point
+```
+
+## Simulated Features
+
+This is a prototype, so the following features are **simulated** (not fully implemented):
+
+- **Authentication**: User is always logged in as "Anastasija" (simulated)
+- **Recommendations**: Simple logic based on category/brand matching
+- **Payment**: No real payment processing - clicking "Confirm order" creates an order and redirects
+- **Order Tracking**: Status is static (can be extended with time-based simulation)
+- **Search**: Search bar is present but not functional
+- **Product Images**: Uses placeholder paths (you can add actual images to `/public/images/`)
+
+## Mock Data
+
+The application uses in-memory mock data including:
+- 200+ products (first 12 are detailed, rest are generated)
+- 10 brands
+- 4 categories with subcategories
+- Sample reviews
+- Order history (created when checkout is completed)
+
+## Customization
+
+### Adding Products
+
+Edit `src/data/mockData.ts` to add or modify products.
+
+### Styling
+
+All components use CSS Modules. Edit the corresponding `.module.css` files to customize styles.
+
+### Recommendations Logic
+
+Modify the `getRecommendations` and `getFrequentlyBoughtTogether` functions in `src/data/mockData.ts` to change the recommendation algorithm.
+
+## Notes
+
+- This is a **prototype** for demonstration purposes
+- Desktop layout only (responsive design is basic)
+- No real backend or database
+- No real authentication or payment processing
+- Images are placeholder paths - add actual images to `/public/images/` folder
+
+## License
+
+This project is created for educational purposes as part of a university assignment.
